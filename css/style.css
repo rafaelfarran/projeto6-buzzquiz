@@ -1,5 +1,7 @@
 /*header´s style*/
-
+* {
+    box-sizing: border-box;
+}
 .top {
     width: 100%;
     height: 69px;
@@ -20,3 +22,51 @@
     line-height: 43px;
     color: #FFFFFF;
 }
+
+/* página inicial */
+
+.home {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin: 0px 18px 0px 18px;
+    border-radius: 5px;
+}
+
+.create-quizz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border: 1px dashed #D5D5D5;
+    width: 100%;
+}
+
+.home p {
+    font-size: 20px;
+    color: #B9B9B9;
+    padding: 20px;
+    text-align: center;
+}
+
+.button-creat-quizz {
+    width: 151px;
+    height: 40px;
+    font-size: 21px;
+    border-radius: 50px;
+    border: 1px dashed #EC362D;
+    color: #EC362D;
+}
+
+.quizz-list h1 {
+    text-align: left;
+    font-weight: 700;
+    background-color:antiquewhite;
+    width: 100%;
+    margin-top: 35px;
+}
+
