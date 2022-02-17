@@ -15,11 +15,13 @@
 </head>
 
 <body>
-
     <header class="top">
         <h1>BuzzQuizz</h1>
     </header>
-    <section class="home">
+
+    <!--home page section-->
+
+    <section class="home hidden">
         <div class="create-quizz">
             <p>Você não criou nenhum<br>
                 quizz ainda :(</p>
@@ -44,33 +46,37 @@
                 <div class="titulo-quizz">
                 <P>Titulo bem legal</P>
                 </div>
+            <input class="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
+            <div class="quizz-list">
+                <h1>Todos os quizzes</h1>
             </div>
         </div>
     </section>
 
-        <!-- quizz´s basic informations section-->
-        <section class="screen3-1">
-            <div class="screen3-1-info">
-                <h2>Comece pelo começo</h2>
+    <!-- quizz´s basic informations section-->
+
+    <section class="screen3-1 hidden">
+        <div class="screen3-1-info">
+            <h2>Comece pelo começo</h2>
+        </div>
+        <div class="basic-infos">
+            <div class="basic-info-input">
+                <input class="first-info" type="text" placeholder="Título do seu quizz">
             </div>
-            <div class="basic-infos">
-                <div class="basic-info-input">
-                    <input class="first-info" type="text" placeholder="Título do seu quizz">
-                </div>
-                <div class="basic-info-input">
-                    <input class="info-secreen3-1" type="text" placeholder="URL da imagem do seu quizz">
-                </div>
-                <div class="basic-info-input">
-                    <input class="info-secreen3-1" type="text" placeholder="Quantidade de perguntas do quizz">
-                </div>
-                <div class="basic-info-input">
-                    <input class="info-secreen3-1" type="text" placeholder="Quantidade de níveis do quizz">
-                </div>
+            <div class="basic-info-input">
+                <input class="info-secreen3-1" type="text" placeholder="URL da imagem do seu quizz">
             </div>
-            <div class="screen3-1-info">
-                <button class="change-to-secreen3-2">Prosseguir para criar perguntas</button>
+            <div class="basic-info-input">
+                <input class="info-secreen3-1" type="text" placeholder="Quantidade de perguntas do quizz">
             </div>
-        </section>
+            <div class="basic-info-input">
+                <input class="info-secreen3-1" type="text" placeholder="Quantidade de níveis do quizz">
+            </div>
+        </div>
+        <div class="screen3-1-info">
+            <button class="change-to-secreen3-2">Prosseguir para criar perguntas</button>
+        </div>
+    </section>
 
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
