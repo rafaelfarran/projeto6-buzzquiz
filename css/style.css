@@ -65,8 +65,15 @@ body{
     color: #EC362D;
 }
 
-.quizz-list {
+.quizzes-from-server {
+    position: relative;
+}
 
+.quizz-list img {
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+    margin-top: 14px;
 }
 
 .quizz-list h1 {
@@ -74,6 +81,18 @@ body{
     width: 100%;
     margin-top: 35px;
     text-align: left;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.titulo-quizz {
+    position: absolute;
+    left: 10;
+    bottom: 10px;
+}
+
+.titulo-quizz p {
+    color: #FFFFFF;
 }
 
 /*screen3.1 style*/
