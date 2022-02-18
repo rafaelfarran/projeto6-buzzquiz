@@ -1,16 +1,23 @@
 
-/*screen3.1 style*/
+/*screen 3.3 style*/
 
-.screen3-instructions{
+.level{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 439px;
+    margin-top: 28px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.screen3-instructions h2{
-    width: 250px;
+.level h2{
+    width: 200px;
     font-size: 20px;
     line-height: 23px;
-    margin-top: 106px;
+    margin-top: 27px;
+    margin-left: 17px;
+    display: flex;
     color: #000000;
     font-weight: bold;
     font-style: normal;
@@ -18,59 +25,77 @@
     font-family: 'Encode Sans', sans-serif;
 }
 
-.basic-infos{
-    width: 100%;
-    height: 256px;
-    margin-top: 29px;
-    background-color: #FFFFFF;
+.level-description{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.level-input{
+    width: 341px;
+    height: 46px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-top: 14px;
+    font-size: 19px;
+    line-height: 22px;
+    border-radius: 5px;
+    color: #D1D1D1;
+    font-style: italic;
+    font-weight: normal;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.level-details{
+    width: 341px;
+    height: 177px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-top: 14px;
+    font-size: 19px;
+    line-height: 22px;
+    border-radius: 5px;
+    color: #D1D1D1;
+    font-style: italic;
+    font-weight: normal;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.next-level{
+    width: 100%;
+    height: 74px;
+    margin-top: 24px;
+    padding-left: 17px;
+    padding-right: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.basic-info-input{
-    display: flex;
-    justify-content: center;
+.next-level ion-icon{
+    width: 26px;
+    height: 23px;
+    color: #000000;
 }
 
-.quizz-title{
-    width: 341px;
-    height: 46px;
-    padding-left: 14px;
-    padding-right: 14px;
-    margin-top: 21px;
-    font-size: 19px;
-    line-height: 22px;
-    border-radius: 5px;
-    color: #D1D1D1;
-    font-style: italic;
-    font-weight: normal;
-    box-sizing: border-box;
-    background-color: #FFFFFF;
-    border: 1px solid #D1D1D1;
+.next-level h2{
+    width: 65px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
     font-family: 'Encode Sans', sans-serif;
 }
 
-.info-secreen3-1{
-    width: 341px;
-    height: 46px;
-    padding-left: 14px;
-    padding-right: 14px;
-    margin-top: 9px;
-    font-size: 19px;
-    line-height: 22px;
-    border-radius: 5px;
-    color: #D1D1D1;
-    font-style: italic;
-    font-weight: normal;
-    box-sizing: border-box;
-    background-color: #FFFFFF;
-    border: 1px solid #D1D1D1;
-    font-family: 'Encode Sans', sans-serif;
-}
-
-.screen3-1 button{
+.screen3-3 button{
     width: 324px;
     height: 54px;
     margin-top: 29px;
