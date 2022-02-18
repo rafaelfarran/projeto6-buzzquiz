@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/screen3-1.css" />
+    <link rel="stylesheet" href="css/screen3-2.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700&display=swap"
@@ -35,7 +37,7 @@
     <!-- quizz´s basic informations section-->
 
     <section class="screen3-1 hidden">
-        <div class="screen3-1-info">
+        <div class="screen3-instructions">
             <h2>Comece pelo começo</h2>
         </div>
         <div class="basic-infos">
@@ -43,7 +45,7 @@
                 <input class="first-info" type="text" placeholder="Título do seu quizz">
             </div>
             <div class="basic-info-input">
-                <input class="info-secreen3-1" type="text" placeholder="URL da imagem do seu quizz">
+                <input class="info-secreen3-1" type="url" placeholder="URL da imagem do seu quizz">
             </div>
             <div class="basic-info-input">
                 <input class="info-secreen3-1" type="text" placeholder="Quantidade de perguntas do quizz">
@@ -52,13 +54,70 @@
                 <input class="info-secreen3-1" type="text" placeholder="Quantidade de níveis do quizz">
             </div>
         </div>
-        <div class="screen3-1-info">
+        <div class="screen3-instructions">
             <button class="change-to-secreen3-2">Prosseguir para criar perguntas</button>
         </div>
     </section>
 
+    <!--creat quizz´s questions-->
+
+    <section class="screen3-2">
+        <div class="screen3-instructions">
+            <h2>Crie suas perguntas</h2>
+        </div>
+        <div class="basic-questions">
+            <div class="question">
+                <h2>Pergunta 1</h2>
+            </div>
+            <div class="basic-question-input">
+                <input class="first-question" type="text" placeholder="Texto da pergunta">
+            </div>
+            <div class="basic-question-input">
+                <input class="background-color-input" type="text" placeholder="Cor de fundo da pergunta">
+            </div>
+            <div class="question">
+                <h2>Resposta correta</h2>
+            </div>
+            <div class="basic-question-input">
+                <input class="right-answer" type="text" placeholder="Resposta correta">
+            </div>
+            <div class="basic-question-input">
+                <input class="right-answer-URL" type="url" placeholder="URL da imagem">
+            </div>
+            <div class="question">
+                <h2>Respostas incorretas</h2>
+            </div>
+            <div class="basic-question-input">
+                <input class="wrong-answer" type="text" placeholder="Resposta incorreta 1">
+            </div>
+            <div class="basic-question-input">
+                <input class="wrong-answer-URL" type="url" placeholder="URL da imagem 1">
+            </div>
+            <div class="basic-question-input">
+                <input class="wrong-answer" type="text" placeholder="Resposta incorreta 2">
+            </div>
+            <div class="basic-question-input">
+                <input class="wrong-answer-URL" type="url" placeholder="URL da imagem 2">
+            </div>
+            <div class="basic-question-input">
+                <input class="wrong-answer" type="text" placeholder="Resposta incorreta 3">
+            </div>
+            <div class="basic-question-input">
+                <input class="wrong-answer-URL" type="url" placeholder="URL da imagem 3">
+            </div>
+        </div>
+        <div class="next-question">
+            <h2>Pergunta 2</h2>
+            <ion-icon name="create-outline"></ion-icon>
+        </div>
+        <div class="next-question">
+            <h2>Pergunta 3</h2>
+            <ion-icon name="create-outline"></ion-icon>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>"
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="script/script.js"></script>
 </body>
 
