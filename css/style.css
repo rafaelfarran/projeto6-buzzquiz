@@ -74,6 +74,18 @@ body{
     width: 100%;
     margin-top: 35px;
     text-align: left;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.titulo-quizz {
+    position: absolute;
+    left: 10;
+    bottom: 10px;
+}
+
+.titulo-quizz p {
+    color: #FFFFFF;
 }
 
 
