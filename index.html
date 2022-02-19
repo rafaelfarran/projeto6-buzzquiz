@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/screen3-1.css" />
+    <link rel="stylesheet" href="css/screen3-2.css" />
+    <link rel="stylesheet" href="css/screen3-3.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700&display=swap"
@@ -25,26 +28,33 @@
         <div class="create-quizz">
             <p>Você não criou nenhum<br>
                 quizz ainda :(</p>
-            <input class ="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
+            <input class="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
         </div>
         <div class="quizz-list" onclick="renderizarQuizzesNaTela()">
             <h1>Todos os quizzes</h1>
             <div class="quizzes-from-server">
-                <img src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
+                <img
+                    src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
                 <div class="titulo-quizz">
-                <P>Titulo bem legal</P>
+                    <P>Titulo bem legal</P>
                 </div>
             </div>
             <div class="quizzes-from-server">
-                <img src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
+                <img
+                    src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
                 <div class="titulo-quizz">
-                <P>Titulo bem legal</P>
+                    <P>Titulo bem legal</P>
                 </div>
             </div>
             <div class="quizzes-from-server">
-                <img src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
+                <img
+                    src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
                 <div class="titulo-quizz">
-                <P>Titulo bem legal</P>
+                    <P>Titulo bem legal</P>
+                </div>
+                <input class="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
+                <div class="quizz-list">
+                    <h1>Todos os quizzes</h1>
                 </div>
         </div>
     </section>
@@ -52,31 +62,95 @@
     <!-- quizz´s basic informations section-->
 
     <section class="screen3-1 hidden">
-        <div class="screen3-1-info">
+        <div class="screen3-instructions">
             <h2>Comece pelo começo</h2>
         </div>
         <div class="basic-infos">
-            <div class="basic-info-input">
-                <input class="first-info" type="text" placeholder="Título do seu quizz">
-            </div>
-            <div class="basic-info-input">
-                <input class="info-secreen3-1" type="text" placeholder="URL da imagem do seu quizz">
-            </div>
-            <div class="basic-info-input">
-                <input class="info-secreen3-1" type="text" placeholder="Quantidade de perguntas do quizz">
-            </div>
-            <div class="basic-info-input">
-                <input class="info-secreen3-1" type="text" placeholder="Quantidade de níveis do quizz">
-            </div>
+            <input class="quizz-title" type="text" placeholder="Título do seu quizz">
+            <input class="quizz-img info-secreen3-1" type="url" placeholder="URL da imagem do seu quizz">
+            <input class="initiate-questions info-secreen3-1" type="text"
+                placeholder="Quantidade de perguntas do quizz">
+            <input class="initiate-levels info-secreen3-1" type="text" placeholder="Quantidade de níveis do quizz">
         </div>
-        <div class="screen3-1-info">
+        <div class="screen3-instructions">
             <button class="change-to-secreen3-2">Prosseguir para criar perguntas</button>
         </div>
     </section>
 
+    <!--creat quizz´s questions-->
 
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="script/script.js"></script>
+    <section class="screen3-2 hidden">
+        <div class="screen3-instructions">
+            <h2>Crie suas perguntas</h2>
+        </div>
+        <div class="basic-questions">
+            <div class="clean-object"></div>
+            <h2>Pergunta 1</h2>
+            <div class="basic-question-input">
+                <input class="question-input first-question" type="text" placeholder="Texto da pergunta">
+                <input class="questions background-color-input" type="text" placeholder="Cor de fundo da pergunta">
+            </div>
+            <h2>Resposta correta</h2>
+            <div class="basic-question-input">
+                <input class="question-input right-answer" type="text" placeholder="Resposta correta">
+                <input class="questions right-answer-URL" type="url" placeholder="URL da imagem">
+            </div>
+            <h2>Respostas incorretas</h2>
+            <div class="basic-question-input">
+                <input class="question-input wrong-answer" type="text" placeholder="Resposta incorreta 1">
+                <input class="questions wrong-answer-URL" type="url" placeholder="URL da imagem 1">
+            </div>
+            <div class="basic-question-input">
+                <input class="question-input wrong-answer" type="text" placeholder="Resposta incorreta 2">
+                <input class="questions wrong-answer-URL" type="url" placeholder="URL da imagem 2">
+            </div>
+            <div class="basic-question-input">
+                <input class="question-input wrong-answer" type="text" placeholder="Resposta incorreta 3">
+                <input class="questions wrong-answer-URL" type="url" placeholder="URL da imagem 3">
+            </div>
+        </div>
+        <div class="next-question">
+            <h2>Pergunta 2</h2>
+            <ion-icon name="create-outline"></ion-icon>
+        </div>
+        <div class="next-question">
+            <h2>Pergunta 3</h2>
+            <ion-icon name="create-outline"></ion-icon>
+        </div>
+        <div class="screen3-instructions">
+            <button class="change-to-secreen3-3">Prosseguir para criar níveis</button>
+        </div>
+    </section>
+
+    <!--creat quizz´s levels-->
+
+    <section class="screen3-3 hidden">
+        <div class="screen3-instructions">
+            <h2>Agora, decida os níveis!</h2>
+        </div>
+        <div class="level">
+            <h2>Nível 1</h2>
+            <div class="level-description">
+                <input class="level-title level-input" type="text" placeholder="Título do nível">
+                <input class="level-percentage level-input" type="text" placeholder="% de acerto mínima">
+                <input class="level-img level-input" type="url" placeholder="URL da imagem do nível">
+                <input class="level-details" type="text" placeholder="Descrição do nível">
+            </div>
+        </div>
+        <div class="next-level">
+            <h2>Nível 2</h2>
+            <ion-icon name="create-outline"></ion-icon>
+        </div>
+        <div class="screen3-instructions">
+            <button class="change-to-screen3.4">Finalizar Quizz</button>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>"
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script/script.js"></script>
+
 </body>
 
 </html>
