@@ -9,16 +9,22 @@ function promessaCumprida(resposta) {
     renderizarQuizzesNaTela()
 }
 
+
 function renderizarQuizzesNaTela() {
     const quizzesServer = document.querySelector(".quizz-list");
-        quizzesServer.innerHTML = "";
+    quizzesServer.innerHTML = "";
     for (let i = 0; i < 6; i++) {
         quizzesServer.innerHTML += `
-    <div class="quizzes-from-server">
-    <img src="${quizzes[i].image}">
-    <div class="titulo-quizz">
-    <P>${quizzes[i].title}</P>
+        <div class="quizzes-from-server">
+        <div class="gradient-color"></div>
+            <img
+                src="${quizzes[i].image}">
+        <div class="titulo-quizz">
+            <P>${quizzes[i].title}</P>
+        </div>
     </div>
-    `;
+`;
     }
 }
+
+
