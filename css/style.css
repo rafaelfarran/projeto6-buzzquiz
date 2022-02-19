@@ -69,9 +69,15 @@ body{
     color: #EC362D;
 }
 
-<<<<<<< HEAD
 .quizzes-from-server {
     position: relative;
+}
+
+.quizz-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .quizz-list img {
@@ -81,8 +87,6 @@ body{
     margin-top: 14px;
 }
 
-=======
->>>>>>> afedb50fd6a7aa1563f94e32edc1257be641afff
 .quizz-list h1 {
     font-weight: 700;
     width: 100%;

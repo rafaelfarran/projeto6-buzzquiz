@@ -21,13 +21,13 @@
 
     <!--home page section-->
 
-    <section class="home hidden">
+    <section class="home">
         <div class="create-quizz">
             <p>Você não criou nenhum<br>
                 quizz ainda :(</p>
             <input class ="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
         </div>
-        <div class="quizz-list">
+        <div class="quizz-list" onclick="renderizarQuizzesNaTela()">
             <h1>Todos os quizzes</h1>
             <div class="quizzes-from-server">
                 <img src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
@@ -46,10 +46,6 @@
                 <div class="titulo-quizz">
                 <P>Titulo bem legal</P>
                 </div>
-            <input class="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
-            <div class="quizz-list">
-                <h1>Todos os quizzes</h1>
-            </div>
         </div>
     </section>
 
