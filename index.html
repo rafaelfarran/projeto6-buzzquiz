@@ -24,7 +24,7 @@
 
     <!--home page section-->
 
-    <section class="home">
+    <section class="home hidden">
         <div class="create-quizz">
             <p>Você não criou nenhum<br>
                 quizz ainda :(</p>
@@ -61,23 +61,20 @@
 
     <!-- quizz´s basic informations section-->
 
-    <section class="screen3-1 hidden">
+   <!--<section class="screen3-1">
         <div class="screen3-instructions">
             <h2>Comece pelo começo</h2>
         </div>
         <div class="basic-infos">
             <input class="quizz-title" type="text" placeholder="Título do seu quizz">
             <input class="quizz-img info-secreen3-1" type="url" placeholder="URL da imagem do seu quizz">
-            <input class="initiate-questions info-secreen3-1" type="text"
-                placeholder="Quantidade de perguntas do quizz">
+            <input class="initiate-questions info-secreen3-1" type="text" placeholder="Quantidade de perguntas do quizz">
             <input class="initiate-levels info-secreen3-1" type="text" placeholder="Quantidade de níveis do quizz">
         </div>
         <div class="screen3-instructions">
-            <button class="change-to-secreen3-2">Prosseguir para criar perguntas</button>
+            <button class="change-to-secreen3-2" onclick="autheticateScreen31()">Prosseguir para criar perguntas</button>
         </div>
     </section>
-
-    <!--creat quizz´s questions-->
 
     <section class="screen3-2 hidden">
         <div class="screen3-instructions">
@@ -122,8 +119,6 @@
         </div>
     </section>
 
-    <!--creat quizz´s levels-->
-
     <section class="screen3-3 hidden">
         <div class="screen3-instructions">
             <h2>Agora, decida os níveis!</h2>
@@ -144,12 +139,13 @@
         <div class="screen3-instructions">
             <button class="change-to-screen3.4">Finalizar Quizz</button>
         </div>
-    </section>
+    </section> -->
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>"
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script/script.js"></script>
+    <script src="script/createquizz.js"></script>
 
 </body>
 

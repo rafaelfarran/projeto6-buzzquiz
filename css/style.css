@@ -69,27 +69,6 @@ body{
     color: #EC362D;
 }
 
-<<<<<<< HEAD
-.quizzes-from-server {
-    position: relative;
-}
-
-.quizz-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.quizz-list img {
-    width: 340px;
-    height: 181px;
-    border-radius: 5px;
-    margin-top: 14px;
-}
-
-=======
->>>>>>> ca5afecae759f90a9b125731784a67c8be092cef
 .quizz-list h1 {
     font-weight: 700;
     width: 100%;
