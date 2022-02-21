@@ -19,6 +19,14 @@ function promessaCumprida(resposta) {
     quizzes = resposta.data;
     renderizarQuizzesNaTela()
 }
+
+function criarQuiz(){
+    const trocarTela1 = document.querySelector(".tela")
+    trocarTela1.classList.add("hidden");
+    const mostrarTela3 = document.querySelector(".screen3-1")
+    mostrarTela3.classList.remove("hidden")
+}
+
 function renderizarQuizzesNaTela() {
     const quizzesServer = document.querySelector(".quizz-list");
     quizzesServer.innerHTML = "";

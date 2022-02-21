@@ -24,11 +24,11 @@
 
     <!--home page section-->
 
-    <section class="home hidden">
+    <section class="home tela">
         <div class="create-quizz">
             <p>Você não criou nenhum<br>
                 quizz ainda :(</p>
-            <input class="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
+            <input class="button-creat-quizz" onclick="criarQuiz()" type="button" name="createquizz" value="Criar Quizz">
         </div>
         <h1>Todos os quizzes</h1>
         <div class="quizz-list" onclick="renderizarQuizzesNaTela()">
@@ -45,7 +45,7 @@
 
     <!-- Quizz's page Screen2-->
 
-    <section class="screen-2">
+    <section class="screen-2 tela hidden">
         <div class="head-screen2">
             <div class="camada-preta"></div>
             <img src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg"
