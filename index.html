@@ -24,38 +24,62 @@
 
     <!--home page section-->
 
-    <section class="home hidden">
+    <section class="home tela">
         <div class="create-quizz">
             <p>Você não criou nenhum<br>
                 quizz ainda :(</p>
-            <input class="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
+            <input class="button-creat-quizz" onclick="criarQuiz()" type="button" name="createquizz" value="Criar Quizz">
         </div>
+        <h1>Todos os quizzes</h1>
         <div class="quizz-list" onclick="renderizarQuizzesNaTela()">
-            <h1>Todos os quizzes</h1>
             <div class="quizzes-from-server">
+                <div class="gradient-color"></div>
                 <img
                     src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
                 <div class="titulo-quizz">
                     <P>Titulo bem legal</P>
                 </div>
             </div>
-            <div class="quizzes-from-server">
-                <img
-                    src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
-                <div class="titulo-quizz">
-                    <P>Titulo bem legal</P>
-                </div>
+    </section>
+
+
+    <!-- Quizz's page Screen2-->
+
+    <section class="screen-2 tela hidden">
+        <div class="head-screen2">
+            <div class="camada-preta"></div>
+            <img src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg"
+                alt="">
+            <div class="title-quizz">
+                <p>Titulo bem legal</p>
             </div>
-            <div class="quizzes-from-server">
-                <img
-                    src="https://cdn2.unrealengine.com/fortnite-naruto-shinobi-teamwork-loading-screen-en-1920x1080-a344ea57a6a6.jpg">
-                <div class="titulo-quizz">
-                    <P>Titulo bem legal</P>
-                </div>
-                <input class="button-creat-quizz" type="button" name="createquizz" value="Criar Quizz">
-                <div class="quizz-list">
-                    <h1>Todos os quizzes</h1>
-                </div>
+        </div>
+        <div class="quizz-questions">
+            <div class="question">
+                <p>Uma pergunta bem boa?</p>
+            </div>
+        </div>
+        <div class="answer-options">
+            <div class="answer">
+                <img src="https://p2.trrsf.com/image/fget/cf/636/0/images.terra.com/2020/08/14/o-gatinho-de-cada-signo-15721.jpeg"
+                    alt="">
+                    <p>Gatinho1</p>
+            </div>
+            <div class="answer">
+                <img src="https://p2.trrsf.com/image/fget/cf/636/0/images.terra.com/2020/08/14/o-gatinho-de-cada-signo-15721.jpeg"
+                    alt="">
+                    <p>Gatinho2</p>
+            </div>
+            <div class="answer">
+                <img src="https://p2.trrsf.com/image/fget/cf/636/0/images.terra.com/2020/08/14/o-gatinho-de-cada-signo-15721.jpeg"
+                    alt="">
+                    <p>Gatinho3</p>
+            </div>
+            <div class="answer">
+                <img src="https://p2.trrsf.com/image/fget/cf/636/0/images.terra.com/2020/08/14/o-gatinho-de-cada-signo-15721.jpeg"
+                    alt="">
+                    <p>Gatinho4</p>
+            </div>
         </div>
     </section>
 
@@ -141,7 +165,7 @@
         </div>
     </section> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>"
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script/script.js"></script>
