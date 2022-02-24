@@ -39,14 +39,48 @@ let store = {
     l9: "",
     l10: ""
 };
+let questionsAnswer = {
+    title: "",
+    color: "",
+    answers: [{
+        text: "",
+        image: "",
+        isCorrectAnswer: true
+    },
+    {
+        text: "",
+        image: "",
+        isCorrectAnswer: false
+    },
+    {
+        text: "",
+        image: "",
+        isCorrectAnswer: false
+    },
+    {
+        text: "",
+        image: "",
+        isCorrectAnswer: false
+    }
+    ]
+}
+
+
 let storage = [];
 let storeLevel = {
-    p1: "",
-    p2: "",
-    p3: "",
-    p4: ""
+    title: "",
+    image: "",
+    text: "",
+    minValue: ""
 }
 let storageLevels = [];
+let shareWithAPI = {
+    title: "",
+    image: "",
+    questions: "",
+    levels: ""
+}
+let storageQuestionsAnswers = [];
 
 function autheticateScreen31() {
     if (authenticateTitle() == true && authenticateURL() == true && authenticateQuizzsQuestionsNumber() == true && authenticateQuizzsLevelsNumber() == true) {
@@ -433,14 +467,40 @@ function verifyScreenInputs() {
 
         }
         storage[k] = store;
-        console.log(storage);
         if (storage[k].l1 == null || storage[k].l2 == null || storage[k].l3 == null || storage[k].l4 == null || storage[k].l5 == null || storage[k].l6 == null) {
             isFalse = null;
             console.log(isFalse)
         }
+        questionsAnswer = {
+            title: validateFirstQuestion,
+            color: color,
+            answers: [{
+                text: validateRightAnswer,
+                image: rightAnswerURL,
+                isCorrectAnswer: true
+            },
+            {
+                text: test1,
+                image: wrongAnswerURL1,
+                isCorrectAnswer: false
+            },
+            {
+                text: test3,
+                image: wrongAnswerURL2,
+                isCorrectAnswer: false
+            },
+            {
+                text: test5,
+                image: wrongAnswerURL3,
+                isCorrectAnswer: false
+            }
+            ]
+        }
+        storageQuestionsAnswers[k] = questionsAnswer;
+        console.log(storageQuestionsAnswers);
         test1 = null;
         test3 = null;
-        test6 = null;
+        test5 = null
         validateFirstQuestion = null;
         validateRightAnswer = null;
     }
@@ -495,50 +555,67 @@ function endQuizz(){
         definePercentage = document.querySelector(`.notification${w} .level-percentage`).value;
         if (authenticateLevelTitle(w) == true){
             storeLevel = {
-                p1: levelTitle,
-                p2: "",
-                p3: "",
-                p4: ""
+                title: levelTitle,
+                image: "",
+                text: "",
+                minValue: ""
             }
         }
         if (definePercentage != null){
             storeLevel = {
-                p1: levelTitle,
-                p2: definePercentage,
-                p3: "",
-                p4: ""
+                title: levelTitle,
+                image: levelURL,
+                text: "",
+                minValue: ""
             }
         }
         if (authenticateLevelURL(w) == true){
             storeLevel = {
-                p1: levelTitle,
-                p2: definePercentage,
-                p3: levelURL,
-                p4: ""
+                title: levelTitle,
+                image: levelURL,
+                text: levelDescription,
+                minValue: ""
             }
         }
         if (authenticateDescription(w) == true){
             storeLevel = {
-                p1: levelTitle,
-                p2: definePercentage,
-                p3: levelURL,
-                p4: levelDescription
+                title: levelTitle,
+                image: levelURL,
+                text: levelDescription,
+                minValue: definePercentage
             }
         }
         storageLevels[w] = storeLevel;
         console.log(storageLevels)
-        if (storageLevels[w].p1 == null || storageLevels[w].p2 == null || storageLevels[w].p3 == null || storageLevels[w].p4 == null ){
+        if (storageLevels[w].title == null || storageLevels[w].image == null || storageLevels[w].text == null || storageLevels[w].minValue == null ){
             isFalse = null;
         }
     }
+   
     if (isFalse == null) {
         alert("Preencha todos os campos corretamente!");
         isFalse = 1;
     }
-    else {
-        alert("ta certo!");
+    else{
+        shareWithAPI = {
+            title: topTitle,
+            image: img,
+            questions: questionsAnswer,
+            levels: storageLevels
+        };
+        console.log(shareWithAPI);
+        const promisse = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", shareWithAPI);
+        promisse.then(quizzDone);
     }
 }
+
+function quizzDone(){
+    let closeScreen = document.querySelector(".screen3-3");
+    closeScreen.classList.add("hidden");
+    let openScreen = document.querySelector(".screen3-4");
+    openScreen.classList.remove("hidden");
+}
+
 function showCreatScreens() {
     let bodyHTML = document.querySelector("body");
     bodyHTML.innerHTML += `
@@ -609,7 +686,11 @@ function showCreatScreens() {
                 <input class="level-details" type="text" placeholder="Descrição do nível">
             </div>
         </div>
-        </section>
+    </section>
+
+    <section class="screen3-4 hidden">
+        <h2>uhuuuuuuuuuuuul</h2>
+    </section>
         `;
 }
 
