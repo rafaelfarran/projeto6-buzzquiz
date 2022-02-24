@@ -2,6 +2,10 @@ let expression = /[-a-zA-Z0-9@:%\+.~#?&//=]{2,256}.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%
 let topTitle = null;
 let img = null;
 let imgURL = null;
+let validateFirstQuestion = null;
+let validateRightAnswer = null;
+let levelURL = null;
+let levelDescription = null;
 let rightAnswerURL = null;
 let wrongAnswerURL1 = null;
 let wrongAnswerURL2 = null;
@@ -12,6 +16,10 @@ let questionsNumber = null;
 let levelsNumber = null;
 let changeScreen = null;
 let backgroundColor = null;
+let definePercentage = null;
+let levelTitle = null;
+let isFalse = null;
+let levels = null;
 let color = null;
 let test1 = null;
 let test2 = null;
@@ -32,6 +40,13 @@ let store = {
     l10: ""
 };
 let storage = [];
+let storeLevel = {
+    p1: "",
+    p2: "",
+    p3: "",
+    p4: ""
+}
+let storageLevels = [];
 
 function autheticateScreen31() {
     if (authenticateTitle() == true && authenticateURL() == true && authenticateQuizzsQuestionsNumber() == true && authenticateQuizzsLevelsNumber() == true) {
@@ -56,6 +71,30 @@ function authenticateTitle() {
     }
 }
 
+function authenticateLevelTitle(e){
+    let checkLevelTitle = document.querySelector(`.notification${e} .level-title`);
+    if (checkLevelTitle.value.length > 10){
+        levelTitle = checkLevelTitle.value
+        return true;
+    }
+    else {
+        checkLevelTitle.value = "";
+        checkLevelTitle.placeholder = "Insira um título válido";
+    }
+}
+
+function authenticateDescription(r){
+    let checkDescription = document.querySelector(`.notification${r} .level-details`);
+    if (checkDescription.value.length > 30){
+        levelDescription = checkDescription.value;
+        return true;
+    }
+    else {
+        checkDescription.value = "";
+        checkDescription.placeholder = "Insira uma descrição válida";
+    }
+}
+
 function authenticateURL() {
     let regex = new RegExp(expression);
     imgURL = document.querySelector(".quizz-img");
@@ -75,6 +114,20 @@ function authenticateRightAnswersURL(a) {
     imgURL = document.querySelector(`.right-answer-URL.validation${a}`);
     rightAnswerURL = imgURL.value;
     if (!rightAnswerURL.match(regex)) {
+        imgURL.value = ""
+        imgURL.placeholder = "Insira uma URL válida";
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function authenticateLevelURL(u) {
+    let regex = new RegExp(expression);
+    imgURL = document.querySelector(`.notification${u} .level-img`);
+    levelURL = imgURL.value;
+    if (!levelURL.match(regex)) {
         imgURL.value = ""
         imgURL.placeholder = "Insira uma URL válida";
         return false;
@@ -147,7 +200,7 @@ function authenticateQuizzsQuestionsNumber() {
 
 function authenticateQuizzsLevelsNumber() {
     levelsNumber = document.querySelector(".initiate-levels");
-    let levels = levelsNumber.value;
+    levels = levelsNumber.value;
     if (levels < 2) {
         levelsNumber.value = "";
         levelsNumber.placeholder = "Escolha no mínimo 2 níveis";
@@ -162,13 +215,10 @@ function authenticateBackgroundColor(a) {
     let expressionHex = /^#[0-9a-fA-F]{6}/gi;
     let regex = new RegExp(expressionHex);
     backgroundColor = document.querySelector(`.background-color-input.validation${a}`);
-    console.log(backgroundColor);
     color = backgroundColor.value;
-    console.log(color);
     if (!color.match(regex)) {
         backgroundColor.value = "";
         backgroundColor.placeholder = "Código inválido!";
-        console.log(color);
         return false;
     }
     else {
@@ -189,13 +239,9 @@ function createQuestions() {
     }
     nextQuestion.innerHTML += `
     <div class="screen3-instructions">
-        <button class="change-to-secreen3-3" onclick="alertUser()">Prosseguir para criar níveis</button>
+        <button class="change-to-secreen3-3">Prosseguir para criar níveis</button>
     </div>
     `;
-}
-
-function alertUser() {
-    alert("Preencha todos os campos das perguntas");
 }
 
 function fillQuestions() {
@@ -239,8 +285,6 @@ function fillQuestions() {
 }
 
 function verifyScreenInputs() {
-    let validateFirstQuestion = null;
-    let validateRightAnswer = null;
     for (k = 0; k < allQuestions; k++) {
         validateFirstQuestion = document.querySelector(`.first-question.validation${k}`).value;
         validateRightAnswer = document.querySelector(`.right-answer.validation${k}`).value;
@@ -330,9 +374,8 @@ function verifyScreenInputs() {
                 l9: "",
                 l10: ""
             };
-            console.log(store);
         }
-        if (test3 != null){
+        if (test3 != null) {
             store = {
                 l1: validateFirstQuestion,
                 l2: color,
@@ -359,9 +402,8 @@ function verifyScreenInputs() {
                 l9: "",
                 l10: ""
             };
-            console.log(store);
         }
-        if (test5 != null){
+        if (test5 != null) {
             store = {
                 l1: validateFirstQuestion,
                 l2: color,
@@ -388,14 +430,115 @@ function verifyScreenInputs() {
                 l9: test5,
                 l10: wrongAnswerURL3
             };
-            console.log(store);
+
         }
-        storage = [store];
+        storage[k] = store;
+        console.log(storage);
+        if (storage[k].l1 == null || storage[k].l2 == null || storage[k].l3 == null || storage[k].l4 == null || storage[k].l5 == null || storage[k].l6 == null) {
+            isFalse = null;
+            console.log(isFalse)
+        }
+        test1 = null;
+        test3 = null;
+        test6 = null;
+        validateFirstQuestion = null;
+        validateRightAnswer = null;
     }
-    console.log(storage);
+    if (isFalse == null) {
+        alert("Preencha todos os campos corretamente!");
+        isFalse = 1;
+    }
+    else {
+        let changeToScreen33 = document.querySelector(".screen3-2");
+        changeToScreen33.classList.add("hidden");
+        let addHidden = document.querySelector(".screen3-3");
+        addHidden.classList.remove("hidden");
+        creatLevels();
+    }
 }
 
+function creatLevels() {
+    let nextLevel = document.querySelector(".screen3-3");
+    for (n = 1; n < levels; n++) {
+        nextLevel.innerHTML += `
+        <div class="next-level notification${n}" onclick="openLevels(${n})">
+            <h2>Nível ${n + 1}</h2>
+            <ion-icon name="create-outline"></ion-icon>
+        </div>
+        `;
+    }
+    nextLevel.innerHTML += `
+        <div class="screen3-instructions">
+            <button class="change-to-screen3.4" onclick="endQuizz()">Finalizar Quizz</button>
+        </div>
+    `;
+}
 
+function openLevels(levelCheck){
+    let checkLevel = document.querySelector(`.next-level.notification${levelCheck}`);
+    checkLevel.innerHTML = `
+        <div class="level">
+             <h2>Nível ${levelCheck}</h2>
+            <div class="level-description notification${levelCheck}">
+                <input class="level-title level-input" type="text" placeholder="Título do nível">
+                <input class="level-percentage level-input" type="text" placeholder="% de acerto mínima">
+                <input class="level-img level-input" type="url" placeholder="URL da imagem do nível">
+                <input class="level-details" type="text" placeholder="Descrição do nível">
+                </div>
+        </div>
+    `;
+    checkLevel.classList.remove("next-level")
+}
+
+function endQuizz(){
+    for (w = 0; w < levels; w++){
+        definePercentage = document.querySelector(`.notification${w} .level-percentage`).value;
+        if (authenticateLevelTitle(w) == true){
+            storeLevel = {
+                p1: levelTitle,
+                p2: "",
+                p3: "",
+                p4: ""
+            }
+        }
+        if (definePercentage != null){
+            storeLevel = {
+                p1: levelTitle,
+                p2: definePercentage,
+                p3: "",
+                p4: ""
+            }
+        }
+        if (authenticateLevelURL(w) == true){
+            storeLevel = {
+                p1: levelTitle,
+                p2: definePercentage,
+                p3: levelURL,
+                p4: ""
+            }
+        }
+        if (authenticateDescription(w) == true){
+            storeLevel = {
+                p1: levelTitle,
+                p2: definePercentage,
+                p3: levelURL,
+                p4: levelDescription
+            }
+        }
+        storageLevels[w] = storeLevel;
+        console.log(storageLevels)
+        if (storageLevels[w].p1 == null || storageLevels[w].p2 == null || storageLevels[w].p3 == null || storageLevels[w].p4 == null ){
+            isFalse = null;
+        }
+    }
+    if (isFalse == null) {
+        alert("Preencha todos os campos corretamente!");
+        isFalse = 1;
+    }
+    else {
+        alert("ta certo!");
+    }
+}
 function showCreatScreens() {
     let bodyHTML = document.querySelector("body");
     bodyHTML.innerHTML += `
@@ -459,19 +602,12 @@ function showCreatScreens() {
         </div>
         <div class="level">
             <h2>Nível 1</h2>
-            <div class="level-description">
+            <div class="level-description notification0">
                 <input class="level-title level-input" type="text" placeholder="Título do nível">
                 <input class="level-percentage level-input" type="text" placeholder="% de acerto mínima">
                 <input class="level-img level-input" type="url" placeholder="URL da imagem do nível">
                 <input class="level-details" type="text" placeholder="Descrição do nível">
             </div>
-        </div>
-        <div class="next-level">
-            <h2>Nível 2</h2>
-            <ion-icon name="create-outline"></ion-icon>
-        </div>
-        <div class="screen3-instructions">
-            <button class="change-to-screen3.4">Finalizar Quizz</button>
         </div>
         </section>
         `;
